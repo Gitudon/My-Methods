@@ -22,3 +22,8 @@ def count_loss(string: str, set_of_compared_string: set) -> int:
     for char in string:
         if char not in set_of_compared_string:
             loss += 1
+
+
+def read_file(file_path: str) -> str:
+    with open(file_path, "r", encoding="utf-8") as f:
+        return f.read()
