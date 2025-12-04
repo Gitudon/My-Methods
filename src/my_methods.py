@@ -27,3 +27,21 @@ def count_loss(string: str, set_of_compared_string: set) -> int:
 def read_file(file_path: str) -> str:
     with open(file_path, "r", encoding="utf-8") as f:
         return f.read()
+
+
+# itertools.groupbyで置き換え可能
+def run_length_encoding(string: str) -> list:
+    if len(string) == 0:
+        return []
+    assyuku = []
+    focus = string[0]
+    current = 1
+    for i in range(1, len(string)):
+        if string[i] == focus:
+            current += 1
+        else:
+            assyuku.append((focus, current))
+            focus = string[i]
+            current = 1
+    assyuku.append((focus, current))
+    return assyuku
