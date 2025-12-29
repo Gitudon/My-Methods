@@ -49,3 +49,16 @@ def run_length_encoding(string: str) -> list:
 
 def triangle_area(x1, y1, x2, y2, x3, y3):
     return 0.5 * abs(x1 * (y2 - y3) + x2 * (y3 - y1) + x3 * (y1 - y2))
+
+
+# math.ceilで置き換え可能
+def ceil(target: int, bottom: int) -> int:
+    if target % bottom == 0:
+        return target // bottom
+    else:
+        return target // bottom + 1
+
+
+# math.floorで置き換え可能
+def floor(target: int, bottom: int) -> int:
+    return target // bottom
